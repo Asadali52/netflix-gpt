@@ -4,10 +4,10 @@ import { checkValidData } from '../utils/validate';
 import { Eye, EyeClosed } from 'lucide-react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../store/userSlice';
 import toast from 'react-hot-toast';
+import { BackgroundImg, UserAvatar } from '../utils/constants';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -19,7 +19,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // ✅ async/await version
@@ -39,20 +38,18 @@ const Login = () => {
         // update profile
         await updateProfile(user, {
           displayName: name,
-          photoURL: "https://avatars.githubusercontent.com/u/174349653?v=4"
+          photoURL: UserAvatar
         });
 
         // get updated user info
         const { uid, email: userEmail, displayName, photoURL } = auth.currentUser;
         dispatch(addUser({ uid, email: userEmail, displayName, photoURL }));
 
-        navigate("/browse");
         toast.success("Created Account Successfully!");
 
       } else {
         // 🔹 Sign In flow
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        navigate("/browse");
         toast.success("Login Successfully!");
       }
     } catch (error) {
@@ -72,11 +69,7 @@ const Login = () => {
       <div className="min-h-screen w-full bg-black flex items-center justify-center relative">
         <div className='bg-gradient-to-b from-transparent to-black/40 absolute inset-0 z-10 h-full w-full' />
         <div className="absolute inset-0">
-          <img
-            src="https://assets.nflxext.com/ffe/siteui/vlv3/0b0dad79-ad4d-42b7-b779-8518da389976/web/PK-en-20250908-TRIFECTA-perspective_51c2f7b0-0af1-4189-bc89-3e9b30c172d8_small.jpg"
-            alt="background"
-            className="w-full h-full object-cover"
-          />
+          <img src={BackgroundImg} alt="background" className="w-full h-full object-cover" />
         </div>
 
         <div className={`relative z-20 bg-black opacity-90 p-10 max-[400px]:p-6 rounded-lg max-w-[450px] mx-2 w-full text-white ${errorMessage ? "border-red-500" : "border-transparent"} border-2`}>

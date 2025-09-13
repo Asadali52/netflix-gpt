@@ -15,6 +15,10 @@
 - created our redux store with user slice
 - implement signout 
 - Update profile
+- BugFix: Sign up user displayName and profile picture update 
+- BugFix: handle protected route
+- Unsubscribed to the onAuthStateChanged callback
+- Added all hard coded values to the constants.js file
 
 # Features
 - Login/Signup
