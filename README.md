@@ -19,6 +19,17 @@
 - BugFix: handle protected route
 - Unsubscribed to the onAuthStateChanged callback
 - Added all hard coded values to the constants.js file
+- Register TMDB API and get access token
+- Get data from TMDB now playing movies list
+- custom hook for useNowPlayingMoviesHook
+- create movie slice
+- Update store with addTrailerVideo 
+- Planing for main container and secondary container
+- fetch date for trailer video
+- update store with Trailer video data
+- embeded video youtube and make it autoplay and mute and hide info
+- build video section with content and video
+- 
 
 # Features
 - Login/Signup

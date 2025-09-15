@@ -43,15 +43,15 @@ const Header = () => {
 
   return (
     <>
-      <div className='absolute z-50 px-[4%] py-2 flex justify-between items-center z-1 w-full top-0 bg-gradient-to-b from-black/80'>
-        <img className='h-20 max-[900px]:h-16' src={AppLogo} alt='logo' />
+      <div className='absolute z-50 px-[4%] py-2 flex justify-between items-center z-1 w-full top-0 bg-gradient-to-b from-black'>
+        <img className='h-16 max-[768px]:h-10' src={AppLogo} alt='logo' />
         {user &&
           <div className='flex items-center gap-3'>
-            <div onClick={() => setIsShowModal(true)} className='bg-white text-red-500 hover:bg-red-500 hover:text-white cursor-pointer h-[40px] w-[40px] shadow-orange-500 shadow-lg flex justify-center items-center rounded-md'>
-              <Power size={24} />
+            <div onClick={() => setIsShowModal(true)} className='bg-white text-red-500 hover:bg-red-500 hover:text-white cursor-pointer h-[34px] w-[34px] shadow-orange-500 shadow-lg flex justify-center items-center rounded-md'>
+              <Power size={20} />
             </div>
-            <div className='flex hover:bg-gray-300 hover:text-black text-white items-center gap-2 border p-2'>
-              <img height={30} width={30} src={user.photoURL} alt='user' />
+            <div className='flex bg-gray-300 text-black items-center gap-2 border p-1.5'>
+              <img height={24} width={24} src={user.photoURL} alt='user' />
               <p className='font-bold'>{user.displayName}</p>
             </div>
           </div>

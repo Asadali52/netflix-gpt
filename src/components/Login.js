@@ -14,14 +14,13 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
-  // ✅ useState instead of useRef
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
-  // ✅ async/await version
+  //  async/await
   const handleButtonClick = async () => {
     const message = checkValidData(email, password);
     setErrorMessage(message);
@@ -31,7 +30,7 @@ const Login = () => {
 
     try {
       if (!isSignInForm) {
-        // 🔹 Sign Up flow
+        //  Sign Up flow
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
@@ -48,8 +47,8 @@ const Login = () => {
         toast.success("Created Account Successfully!");
 
       } else {
-        // 🔹 Sign In flow
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        // Sign In flow
+        await signInWithEmailAndPassword(auth, email, password);
         toast.success("Login Successfully!");
       }
     } catch (error) {
