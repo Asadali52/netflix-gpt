@@ -2,6 +2,9 @@ import React from 'react';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ title, movies }) => {
+
+  if (!movies || !Array.isArray(movies)) return;
+
   return (
     <div className='py-8 px-[4%]'>
       <p className='text-2xl pb-3 text-white font-bold'>{title}</p>
