@@ -28,8 +28,13 @@
 - fetch date for trailer video
 - update store with Trailer video data
 - embeded video youtube and make it autoplay and mute and hide info
-- build video section with content and video
-- 
+- build video section with content and video (main container)
+- build SecondaryContainer
+- build movie lsit
+- build movie card
+- TMDB img CDN URL
+- made the browse page UI
+- Create custom hook for Movies
 
 # Features
 - Login/Signup

@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='absolute z-50 px-[4%] py-2 flex justify-between items-center z-1 w-full top-0 bg-gradient-to-b from-black'>
+      <div className='fixed z-[200] pl-[3%] pr-[4%] py-2 flex justify-between items-center z-1 w-full top-0 bg-gradient-to-b from-black'>
         <img className='h-16 max-[768px]:h-10' src={AppLogo} alt='logo' />
         {user &&
           <div className='flex items-center gap-3'>
