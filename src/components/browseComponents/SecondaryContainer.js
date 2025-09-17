@@ -22,7 +22,7 @@ const SecondaryContainer = () => {
 
   return (
     <div className='bg-black'>
-      <div className='-mt-[200px] relative z-[100]'>
+      <div className='-mt-[150px] relative z-[100]'>
 
         {nowPlayingMoviesLoader ? (
           <MovieCardLoader />

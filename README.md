@@ -35,6 +35,12 @@
 - TMDB img CDN URL
 - made the browse page UI
 - Create custom hook for Movies
+- add gpt option in header
+- gpt search bar
+- added multi-language feature in gpt section
+- integrate gpt APIs (get open AI key)
+- 
+
 
 # Features
 - Login/Signup
@@ -49,4 +55,15 @@
          - Movie list * N
 - Netflix GPT 
   - Search bar
-  - Movies Suggestions
+  - Movies 
+  
+
+
+
+# REDUX SLICE EXPLANATION
+
+- Slice = ek chhota Redux state section + uske update rules (reducers).
+- initialState = store ke andar default values.
+- reducers = functions jo state ko update karte hain (via dispatched actions).
+- actions = auto-generated functions jo dispatch karne ke liye use hote hain.
+- reducer = woh function jo store ko actual update karne ka kaam deta hai (configureStore me use hota hai).
