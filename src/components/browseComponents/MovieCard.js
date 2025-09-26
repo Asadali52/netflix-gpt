@@ -3,8 +3,11 @@ import { IMG_CDN_URl } from '../../utils/constants';
 
 const MovieCard = ({ posterSrc, popularity }) => {
   return (
-    <div className='shrink-0 relative group overflow-clip'>
-      <img className='w-[220px] object-cover' src={IMG_CDN_URl + posterSrc} alt='img' />
+    <div className='shrink-0 h-[320px] relative group overflow-clip'>
+      {posterSrc ?
+        <img className='w-[220px] h-full object-cover' src={IMG_CDN_URl + posterSrc} alt='img' /> :
+        <div className='w-[220px] bg-gray-500 h-full flex justify-center items-center font-bold text-2xl'>No Image</div>
+      }
       <div className='absolute z-10 bottom-4 left-4 translate-y-28 group-hover:translate-y-0 duration-300'>
         <p className='font-bold text-white'>Popularity</p>
         <p className='text-white'>{popularity}</p>

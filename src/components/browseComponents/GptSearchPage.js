@@ -5,9 +5,9 @@ import { BackgroundImg } from '../../utils/constants';
 
 const GptSearch = () => {
   return (
-    <div className='relative min-h-screen px-[4%]'>
+    <div className='relative min-h-screen'>
       <div className='bg-gradient-to-b from-transparent to-black/40 absolute inset-0 z-10 h-full w-full' />
-      <div className="absolute inset-0">
+      <div className="fixed inset-0">
         <img src={BackgroundImg} alt="background" className="w-full h-full object-cover" />
       </div>
       <GptSearchBar />
