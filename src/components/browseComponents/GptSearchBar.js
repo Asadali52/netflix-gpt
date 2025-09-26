@@ -25,20 +25,20 @@ const GptSearchBar = () => {
     if (!searchText) return toast.error("Search something!");
 
     // // make an API call to gpt API and get movie results
-    const gptResult = await openai.chat.completions.create({
-      messages: [
-        { role: 'user', content: gptQuery },
-      ],
-      model: 'gpt-3.5-turbo',
-    });
+    // const gptResult = await openai.chat.completions.create({
+    //   messages: [
+    //     { role: 'user', content: gptQuery },
+    //   ],
+    //   model: 'gpt-3.5-turbo',
+    // });
 
-    if (!gptResult.choices) {
-      // todo: error handling
-    }
+    // if (!gptResult.choices) {
+    //   // todo: error handling
+    // }
 
     // console.log(gptResult.choices?.[0]?.message?.content);
-    // const gptMovies = ["Raaz", "Chupke Chupke", "Padosan", "Carry On Jatta", "Happy Go Lucky"]
-    const gptMovies = gptResult.choices?.[0]?.message?.content.split(",");
+    const gptMovies = ["Raaz", "Chupke Chupke", "Padosan", "Carry On Jatta", "Happy Go Lucky"]
+    // const gptMovies = gptResult.choices?.[0]?.message?.content.split(",");
     const promiseArray = gptMovies.map(movie => searchMovieTMDB(movie.trim()));
     const tmdbResults = await Promise.all(promiseArray);
 
