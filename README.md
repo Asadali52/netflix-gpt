@@ -39,7 +39,13 @@
 - gpt search bar
 - added multi-language feature in gpt section
 - integrate gpt APIs (get open AI key)
-- 
+- Fetched gpt movies sugggestion from TMDB
+- Create gpt slice added data
+- reused movies list component to make movies suggestions container 
+- memoization 
+- Added .env file 
+- Adding .env file to gitignore 
+- made app responsive
 
 
 # Features
